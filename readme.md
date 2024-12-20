@@ -16,7 +16,7 @@ This Women's Safety Monitoring System leverages AI and CCTV cameras to detect po
 
 - Historical Data: Previous crime data is stored, and the system can detect if a person involved in a current incident matches a criminal record.
 
-# Technologies Used
+## Technologies Used
 
 - SQLite: For storing recorded video footage and relevant data.
   
@@ -28,9 +28,9 @@ This Women's Safety Monitoring System leverages AI and CCTV cameras to detect po
   
 - Flask: To host the web application and handle backend server-side requests.
 
-## Installation
+# Installation
 
-# Prerequisites
+## Prerequisites
 
 - Python 3.x
 - Flask
@@ -40,12 +40,12 @@ This Women's Safety Monitoring System leverages AI and CCTV cameras to detect po
 
 Additional libraries for video processing and GIS mapping (e.g., folium, opencv-python, pandas, etc.)
 
-# Step 1: Clone the Repository
+### Step 1: Clone the Repository
 
             git clone https://github.com/your-repository-link.git
             cd your-repository-folder
 
-# Step 2: Install Dependencies
+## Step 2: Install Dependencies
 
 Ensure you have all the required libraries installed using pip:
 
