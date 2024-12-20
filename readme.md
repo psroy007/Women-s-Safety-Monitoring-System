@@ -7,7 +7,6 @@ This Women's Safety Monitoring System leverages AI and CCTV cameras to detect po
 # Key Features
 
 -- Real-time Monitoring: CCTV cameras stream live footage, and the system continuously analyzes gender, actions, and expressions to detect suspicious behavior.
-
 -- Alert System: The system sends automatic notifications to the police if a woman is surrounded or is in distress (e.g., being gagged or forced).
 -- Database Storage: Video footage of incidents is stored in a secure database for future analysis and reference.
 -- GIS Mapping: Police can track the exact location of the incident in real-time on a GIS map.
