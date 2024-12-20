@@ -42,7 +42,7 @@ Additional libraries for video processing and GIS mapping (e.g., folium, opencv-
 
 ### Step 1: Clone the Repository
 
-            git clone https://github.com/your-repository-link.git
+            git clone https://psroy007/Women-s-Safety-Monitoring-System-link.git
             cd your-repository-folder
 
 ### Step 2: Install Dependencies
