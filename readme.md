@@ -45,19 +45,19 @@ Additional libraries for video processing and GIS mapping (e.g., folium, opencv-
             git clone https://github.com/your-repository-link.git
             cd your-repository-folder
 
-## Step 2: Install Dependencies
+### Step 2: Install Dependencies
 
 Ensure you have all the required libraries installed using pip:
 
             pip install -r requirements.txt
 
-# Step 3: Database Setup
+### Step 3: Database Setup
 
 Run the following script to initialize the SQLite database and store required tables:
 
             python database_setup.py
 
-# Step 4: Run the Application
+### Step 4: Run the Application
 
 To start the web application, run the Flask server:
 
@@ -67,15 +67,15 @@ The application will now be live at http://127.0.0.1:5000/.
 
 ## Usage
 
-# Login Page
+### Login Page
 
 When you access the web application, you will be prompted for a secret key/password to access the login page.
 
-# Login
+### Login
 
 After entering the secret key, log in with the admin or police credentials to gain access to the dashboard.
 
-# Dashboard
+### Dashboard
 
 Once logged in, you will be directed to the Dashboard, which provides:
 
@@ -85,13 +85,13 @@ Once logged in, you will be directed to the Dashboard, which provides:
   
 - GIS Mapping: View the real-time location of the CCTV and incidents related to the detected crime.
 
-# Admin/Police Roles
+### Admin/Police Roles
 
 - Admin: Has the ability to view recorded video footage, live streams, and incident data.
   
 - Police: Can view live locations on the GIS map and receive crime alerts.
 
-# Alert System
+### Alert System
 
 If the system detects a woman being surrounded by men or in a forced situation, it will:
 
@@ -101,7 +101,7 @@ If the system detects a woman being surrounded by men or in a forced situation, 
   
 - Send notifications to the police with the GPS location of the incident on the GIS map.
 
-# Dataset and Model Training
+## Dataset and Model Training
 
 The model has been trained on various datasets containing images and videos of people in public spaces to detect the following:
 
@@ -113,18 +113,18 @@ The model has been trained on various datasets containing images and videos of p
 
 The model uses a combination of deep learning and computer vision to analyze these factors and make real-time decisions.
 
-# Security
+## Security
 
 - Login Security: The application requires a secret key for access and ensures that only authorized personnel can log in to the system.
   
 - Data Encryption: Video footage and alerts are securely stored and encrypted in the SQLite database.
 
 
-# Contributing
+## Contributing
 
 If you'd like to contribute to this project, feel free to fork the repository and submit pull requests. Contributions are always welcome to improve women's safety and enhance the system’s effectiveness.
 
-# Future Enhancements
+## Future Enhancements
 
 - Integrate with more advanced AI models for even more accurate distress detection.
   
@@ -132,7 +132,7 @@ If you'd like to contribute to this project, feel free to fork the repository an
   
 - Integrate real-time communication with police officers for quicker response times.
 
-# License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
