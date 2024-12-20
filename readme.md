@@ -1,10 +1,10 @@
-## Women's Safety Monitoring System
+# Women's Safety Monitoring System
 
-# Overview
+## Overview
 
 This Women's Safety Monitoring System leverages AI and CCTV cameras to detect potential threats to women's safety in real-time. The model analyzes the surrounding environment and identifies if a woman is being surrounded by men, possibly in distress or forced conditions. If such an incident is detected, the system automatically starts recording and alerts nearby police stations. Additionally, the system incorporates GIS mapping, allowing law enforcement to view the exact location of the incident.
 
-# Key Features
+## Key Features
 
 - Real-time Monitoring: CCTV cameras stream live footage, and the system continuously analyzes gender, actions, and expressions to detect suspicious behavior.
 
