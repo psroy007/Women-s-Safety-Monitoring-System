@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Women's Safety Dashboard | Safety Innovators</title>
+    <link rel="shortcut icon" href="./logo.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: #f9f9f9;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background: linear-gradient(to right, #0e0b58, #e53935);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .main-content div {
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: #f5f5f5;
+        }
+
+        .main-content div:hover {
+            transform: scale(1.05);
+            background-color: #ffe5e5;
+            border-color: #e53935;
+        }
+
+        .main-content div:active {
+            transform: scale(1.02);
+        }
+
+        .main-content div i {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e53935;
+        }
+
+        .center-content {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, #2d2d34, #08566a); /* Charcoal to maroon */
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 20px 70vh;
+        }
+
+        .navbar label {
+            margin-top: 12px; 
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .dropdown select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 4px;
+            border: 2px solid #ddd;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: linear-gradient(to right, #2d2d34, #08566a); /* Charcoal to dark teal */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5em;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-grid video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode header {
+            background: linear-gradient(to right, #1f1f1f, #d32f2f);
+        }
+
+        .dark-mode .main-content div {
+            background: #333;
+            border-color: #555;
+        }
+
+        .dark-mode .main-content div:hover {
+            background-color: #444;
+            border-color: #d32f2f;
+        }
+
+        .dark-mode .navbar {
+            background: linear-gradient(to right, #2c2c2c, #003d56);
+        }
+
+        .dark-mode .footer {
+            background: linear-gradient(to right, #2c2c2c, #003d56);
+        }
+
+        .dark-mode iframe {
+            border-color: #444;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e53935;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-shield-alt"></i> CCTV Women's Safety Dashboard</h1>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <div id="dashboard" onclick="window.location.href='#'">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Dashboard</h3>
+                <p>Monitor and analyze CCTV data.</p>
+            </div>
+            <div id="collection" onclick="window.location.href='#foot'">
+                <i class="fas fa-database"></i>
+                <h3>Data Collection</h3>
+                <p>View and store footage records.</p>
+            </div>
+            <div id="gis" onclick="window.location.href='/hotspots'">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>GIS Mapping</h3>
+                <p>Identify safety hotspots.</p>
+            </div>
+        </div>
+        
+        <!-- <div class="center-content"> -->
+            <div class="navbar">
+                <label for="cctv-select">Choose CCTV Footage: </label>
+                <div class="dropdown">
+                    <select id="cctv-select" onchange="updateFootage()">
+                        <option value="cctv1.mp4">CCTV 1</option>
+                        <option value="cctv2.mp4">CCTV 2</option>
+                        <option value="cctv3.mp4">CCTV 3</option>
+                        <option value="cctv4.mp4">CCTV 4</option>
+                        <option value="cctv5.mp4">CCTV 5</option>
+                        <option value="cctv6.mp4">CCTV 6</option>
+                        <option value="cctv7.mp4">CCTV 7</option>
+                        <option value="cctv8.mp4">CCTV 8</option>
+                        <option value="live-camera">Live Camera</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="footage">
+                <img src="{{ url_for('video_feed') }}" alt="" id="footage-frame">
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <h2>Recorded Videos</h2>
+    <ul>
+        {% for video in videos %}
+            <li>
+                <a href="{{ url_for('video', filename=video) }}" target="_blank">
+                    {{ video }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <footer class="footer" id="foot">
+        <h3>CCTV Footages</h3>
+        <div class="video-grid">
+            {% for video in videos %}
+                <video controls>
+                    <source src="{{ url_for('video', filename=video) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endfor %}
+        </div>
+    </footer>
+    
+    
+    <button class="toggle-button" onclick="toggleDarkMode()">🌓</button>
+    
+    <script>
+        function updateFootage() {
+        const selectedCCTV = document.getElementById('cctv-select').value;
+        const footageFrame = document.getElementById('footage-frame');
+
+        // Show live camera only when "live-camera" is selected
+        if (selectedCCTV === 'live-camera') {
+            footageFrame.style.display = "block"; // Show the live stream
+            footageFrame.src = "/live-camera";   // Set the live stream source
+        } else {
+            footageFrame.style.display = "none";  // Hide the live stream
+            footageFrame.src = ""; // Clear the source
+        }
+    }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>

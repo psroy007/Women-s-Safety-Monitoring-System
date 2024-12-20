@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Centered UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #333333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .qr-code {
+            width: 100%;
+            max-width: 250px; /* Limit the QR Code size */
+            margin: 20px auto;
+            display: block;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .links {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #2575fc;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #6a11cb;
+        }
+
+        /* Responsive Styling for Smaller Screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .qr-code {
+                max-width: 200px; /* Adjust QR code size for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .qr-code {
+                max-width: 150px; /* Further adjust QR code size for very small screens */
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .links a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your QR Code</h1>
+    <!-- Add your QR code image here -->
+    <img src="./qr-code.png" alt="QR Code" class="qr-code">
+
+    <p class="description">Scan the QR Code to access your page or content.</p>
+
+    <div class="links">
+        <a href="https://www.linkedin.com/in/purabsingharoy/">Need help? Contact support</a>
+    </div>
+</div>
+
+</body>
+</html>

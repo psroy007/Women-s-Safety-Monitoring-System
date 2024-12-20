@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Crime Hotspots</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crime Hotspots in India (Women's Safety)</h1>
+    <div id="map"></div>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([20.5937, 78.9629], 5); // Coordinates for India
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Example data: Crime hotspots with specific locations within cities
+        const crimeSpots = [
+            { 
+                name: "Delhi", 
+                coords: [28.7041, 77.1025], 
+                description: "High number of incidents reported.",
+                subLocations: [
+                    { name: "Connaught Place", coords: [28.6315, 77.2167], description: "Incidents related to harassment." },
+                    { name: "Chandni Chowk", coords: [28.6562, 77.2301], description: "Pickpocketing and harassment cases." },
+                    { name: "Karol Bagh", coords: [28.6511, 77.1909], description: "Known for frequent scams and theft." }
+                ]
+            },
+            { 
+                name: "Mumbai", 
+                coords: [19.0760, 72.8777], 
+                description: "Notable safety concerns in certain areas.",
+                subLocations: [
+                    { name: "Andheri", coords: [19.1189, 72.8468], description: "Cases of theft and harassment reported." },
+                    { name: "Colaba", coords: [18.9067, 72.8147], description: "Safety concerns during late hours." },
+                    { name: "Dadar", coords: [19.0180, 72.8421], description: "Incidents of bag-snatching reported." }
+                ]
+            },
+            { 
+                name: "Bengaluru", 
+                coords: [12.9716, 77.5946], 
+                description: "Incidents have been rising recently.",
+                subLocations: [
+                    { name: "MG Road", coords: [12.9752, 77.6092], description: "Incidents of stalking reported." },
+                    { name: "Whitefield", coords: [12.9698, 77.7499], description: "Notable rise in harassment cases." },
+                    { name: "Koramangala", coords: [12.9352, 77.6245], description: "Known for occasional harassment issues." }
+                ]
+            },
+            { 
+                name: "Hyderabad", 
+                coords: [17.3850, 78.4867], 
+                description: "Improved but concerns remain.",
+                subLocations: [
+                    { name: "Hitech City", coords: [17.4504, 78.3808], description: "Safety concerns during late-night hours." },
+                    { name: "Charminar", coords: [17.3616, 78.4747], description: "Known for pickpocketing incidents." },
+                    { name: "Banjara Hills", coords: [17.4126, 78.4278], description: "Incidents of harassment reported." }
+                ]
+            },
+            { 
+                name: "Kolkata", 
+                coords: [22.5726, 88.3639], 
+                description: "Moderate safety concerns reported.",
+                subLocations: [
+                    { name: "Park Street", coords: [22.5504, 88.3524], description: "Known for occasional thefts." },
+                    { name: "Esplanade", coords: [22.5675, 88.3476], description: "Incidents of pickpocketing reported." },
+                    { name: "Salt Lake", coords: [22.5868, 88.4172], description: "Notable safety concerns at night." }
+                ]
+            }
+        ];
+
+        // Add main city markers and sub-location markers
+        crimeSpots.forEach(spot => {
+            const cityMarker = L.marker(spot.coords)
+                .addTo(map)
+                .bindPopup(`<strong>${spot.name}</strong><br>${spot.description}`);
+
+            // Add sub-location markers
+            spot.subLocations.forEach(sub => {
+                L.marker(sub.coords)
+                    .addTo(map)
+                    .bindPopup(`<strong>${sub.name}</strong><br>${sub.description}`);
+            });
+        });
+    </script>
+</body>
+</html>

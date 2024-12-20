@@ -1,0 +1,152 @@
+*{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center; /* Position the form slightly lower */
+    height: 96vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.5)), url('./background-ui.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px; /* Adjust the form's top margin */
+}
+
+/* Watermark Logo Styling */
+.watermark {
+    position: absolute;
+    top: 20px; /* Position at the top */
+    right: 20px; /* Position at the right corner */
+    width: 150px; /* Control size of the watermark */
+    opacity: 0.2; /* Make the logo semi-transparent */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    z-index: -1; /* Keep it behind the form */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow around the logo */
+    border-radius: 5px; /* Optional: Rounded corners for the logo */
+}
+
+
+
+.container {
+    background: rgba(255, 255, 255, 0.7); /* Less transparent for better contrast */
+    padding: 20px 30px;
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5); /* Stronger shadow for better contrast */
+    backdrop-filter: blur(8px); /* Maintain the blur effect */
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 350px; /* Slightly wider for better spacing */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333333; /* Darker text for better visibility */
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333333; /* Darker text for better readability */
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333333; /* Darker text */
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Subtle placeholder */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Bright, solid blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Slightly darker blue */
+}
+
+.links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjusts width for smaller screens */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust font size for smaller screens */
+    }
+
+    label, input, button {
+        font-size: 13px; /* Adjust input and button text size */
+    }
+
+    button {
+        padding: 10px; /* Reduce button padding */
+    }
+
+    .links a {
+        font-size: 12px; /* Smaller font for links */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Further adjust heading size for very small screens */
+    }
+
+    label {
+        font-size: 12px; /* Reduce label size */
+    }
+
+    input {
+        padding: 10px; /* Smaller padding for inputs */
+    }
+
+    button {
+        padding: 8px; /* Smaller padding for buttons */
+    }
+}
